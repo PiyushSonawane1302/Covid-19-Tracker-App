@@ -1,1 +1,1 @@
-# Covid18-Tracker-App
+# Covid-19-Tracker-App
