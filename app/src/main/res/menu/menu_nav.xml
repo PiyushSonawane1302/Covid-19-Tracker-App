@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_helpline"
+            android:icon="@drawable/ic_call"
+            android:title="@string/helpline_number" />
+        <item
+            android:id="@+id/nav_news_updates"
+            android:icon="@drawable/ic_news"
+            android:title="News Updates" />
+
+        <item
+            android:id="@+id/nav_precautions"
+            android:icon="@drawable/ic_health_precautions"
+            android:title="Precautions" />
+
+        <item
+            android:id="@+id/nav_symptoms"
+            android:icon="@drawable/ic_symptom"
+            android:title="Symptoms" />
+
+        <item
+            android:id="@+id/nav_country"
+            android:icon="@drawable/ic_globe"
+            android:title="Country Wise data" />
+
+        <item
+            android:id="@+id/nav_testing_labs"
+            android:icon="@drawable/ic_approval"
+            android:title="Testing Labs" />
+
+
+        <item android:title="@string/nav_support">
+
+            <menu>
+                <item
+                    android:id="@+id/nav_help"
+                    android:icon="@drawable/ic_help_web_button"
+                    android:title="@string/nav_help" />
+
+                <item
+                    android:id="@+id/nav_feedback"
+                    android:icon="@drawable/ic_comment"
+                    android:title="@string/nav_feedback" />
+
+            </menu>
+
+        </item>
+
+    </group>
+
+</menu>

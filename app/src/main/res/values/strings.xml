@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Covid 19 Tracker</string>
+    <string name="nav_support">Support</string>
+    <string name="nav_help">Help</string>
+    <string name="nav_feedback">Give us feedback</string>
+    <string name="nav_open_drawer">Open navigation drawer</string>
+    <string name="nav_close_drawer">Close navigation drawer</string>
+    <string name="header_title">Covid 19</string>
+    <string name="header_text2">Are you feeling sick ?</string>
+    <string name="header_text3">If you feel sick with any of covid-19 symptons please call us immeditely for help.</string>
+    <string name="helpline_number">Helpline Number</string>
+    <string name="call_btn">Call Now</string>
+    <string name="precaution">Precautions</string>
+    <string name="explore">Explore</string>
+    <string name="global_stats">Global Statistics</string>
+    <string name="confirmed">Confirmed</string>
+    <string name="active">Active</string>
+    <string name="recovered">Recovered</string>
+    <string name="deaths">Deaths</string>
+    <string name="search">Search</string>
+    <string name="covid_test">Coronavirus Test</string>
+    <string name="symptoms">Symptoms</string>
+    <string name="news_updates">News Updates</string>
+    <string name="turn_on_internet">Please Turn On Internet Connection !</string>
+    <string name="pull_refresh"> and Pull down to Refresh !</string>
+
+
+</resources>
