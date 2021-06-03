@@ -10,14 +10,12 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 
 public class FragmentActivity extends AppCompatActivity {
 
-
-    Toolbar toolbar;
-
-
+    TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,15 +25,19 @@ public class FragmentActivity extends AppCompatActivity {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.setStatusBarColor(Color.LTGRAY);
 
+        textView = findViewById(R.id.tv_fragment);
+
         String fragmentIdentifier = getIntent().getStringExtra("frag");
 
         if (fragmentIdentifier.equals("precautions")) {
+            textView.setText(R.string.precaution);
             Fragment fragment = new PrecautionsFragment();
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.content_frame, fragment);
             ft.commit();
         }
         if (fragmentIdentifier.equals("symptoms")) {
+            textView.setText(R.string.symptoms);
             Fragment fragment = new SymptomsFragment();
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.content_frame, fragment);

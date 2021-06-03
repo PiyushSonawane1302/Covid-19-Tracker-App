@@ -34,7 +34,9 @@ import com.google.android.material.navigation.NavigationView;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -227,10 +229,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 try {
 
                     JSONObject jsonObject = new JSONObject(response);
-                    total.setText(jsonObject.getString("cases"));
-                    deaths.setText(jsonObject.getString("deaths"));
-                    active.setText(jsonObject.getString("active"));
-                    recovered.setText(jsonObject.getString("recovered"));
+
+                    String total_json = jsonObject.getString("cases");
+                    long totals = Long.parseLong(total_json);
+                    total.setText(NumberFormat.getNumberInstance(Locale.US).format(totals));
+
+                    String death_json = jsonObject.getString("deaths");
+                    long death = Long.parseLong(death_json);
+                    deaths.setText(NumberFormat.getNumberInstance(Locale.US).format(death));
+
+                    String active_json = jsonObject.getString("active");
+                    long actives = Long.parseLong(active_json);
+                    active.setText(NumberFormat.getNumberInstance(Locale.US).format(actives));
+
+                    String recovered_json = jsonObject.getString("recovered");
+                    long recoveries = Long.parseLong(recovered_json);
+                    recovered.setText(NumberFormat.getNumberInstance(Locale.US).format(recoveries));
+
+//                    total.setText(jsonObject.getString("cases"));
+//                    deaths.setText(jsonObject.getString("deaths"));
+//                    active.setText(jsonObject.getString("active"));
+//                    recovered.setText(jsonObject.getString("recovered"));
 
 
                 } catch (JSONException e) {
