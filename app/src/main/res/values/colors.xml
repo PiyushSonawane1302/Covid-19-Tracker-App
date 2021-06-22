@@ -19,6 +19,7 @@
     <color name="total_case_active">#157FFB</color>
     <color name="total_case_recovered">#30A64A</color>
     <color name="total_case_death">#6D757D</color>
+    <color name="pickdate_btn">#16A5C4</color>
 
 
 </resources>

@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     Toolbar toolbar;
     Button call_btn;
-    Button news_update_btn, precautions_btn, symptoms_btn, countryWise_data_btn,test_labs;
+    Button news_update_btn, precautions_btn, symptoms_btn, countryWise_data_btn,test_labs,search_vaccine_btn;
     TextView total, active, recovered, deaths;
 
     @Override
@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         symptoms_btn = findViewById(R.id.symptoms_btn);
         countryWise_data_btn = findViewById(R.id.countryWise_data_btn);
         test_labs = findViewById(R.id.testLabs_btn);
+        search_vaccine_btn = findViewById(R.id.search_vaccine_btn);
 
         total = findViewById(R.id.tv_total);
         active = findViewById(R.id.tv_active);
@@ -95,6 +96,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     Intent call_intent = new Intent(Intent.ACTION_DIAL);
                     call_intent.setData(Uri.parse("tel:" + 1123978046));
                     startActivity(call_intent);
+                }
+            });
+
+
+            search_vaccine_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                 startActivity(new Intent(MainActivity.this,VaccinationSearchActivity.class));
                 }
             });
 
@@ -208,6 +217,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Uri gmmIntentUri = Uri.parse("geo:0,0?q=covid testing lab");
                 intent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                 intent.setPackage("com.google.android.apps.maps");
+                break;
+            case R.id.nav_vaccination_centre :
+                intent = new Intent(this,VaccinationSearchActivity.class);
                 break;
         }
 
