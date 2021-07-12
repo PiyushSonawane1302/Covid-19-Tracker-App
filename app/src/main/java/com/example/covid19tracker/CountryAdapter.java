@@ -13,6 +13,9 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
+/**
+ * Adapter for the country
+ */
 public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHolder> {
 
     ArrayList<Country> items = new ArrayList<>();
@@ -33,7 +36,7 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHold
         holder.active.setText(currentItem.active);
         holder.recovered.setText(currentItem.recovered);
         holder.death.setText(currentItem.deaths);
-        Glide.with(holder.itemView.getContext()).load(currentItem.flagUrl).into(holder.flag);
+        Glide.with(holder.itemView.getContext()).load(currentItem.flagUrl).into(holder.flag); //Used Glide to load image
 
 
     }

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     Toolbar toolbar;
     Button call_btn;
-    Button news_update_btn, precautions_btn, symptoms_btn, countryWise_data_btn,test_labs,search_vaccine_btn;
+    Button news_update_btn, precautions_btn, symptoms_btn, countryWise_data_btn, test_labs, search_vaccine_btn;
     TextView total, active, recovered, deaths;
 
     @Override
@@ -66,9 +67,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         setSupportActionBar(toolbar);
 
-        if (isNetworkAvailable()){
+        if (isNetworkAvailable()) {
 
-            fetchTotalsData();
+            fetchTotalsData(); //Fetching total cases data to display on the dashboard
 
             DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar
@@ -103,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             search_vaccine_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                 startActivity(new Intent(MainActivity.this,VaccinationSearchActivity.class));
+                    startActivity(new Intent(MainActivity.this, VaccinationSearchActivity.class));
                 }
             });
 
@@ -156,15 +157,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             NavigationView navigationView = findViewById(R.id.nav_view);
             navigationView.setNavigationItemSelectedListener(this);
         }
-        else{
-            Intent intent = new Intent(this,NoInternet.class);
+        //No Internet Activity is started if the network is not available
+        else {
+
+            Intent intent = new Intent(this, NoInternet.class);
             startActivity(intent);
             finish();
         }
 
     }
-
-
 
 
     @Override
@@ -178,7 +179,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-
+    /**
+     * This to to open the particular navigation item when
+     * item is clicked
+     */
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
@@ -218,8 +223,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 intent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                 intent.setPackage("com.google.android.apps.maps");
                 break;
-            case R.id.nav_vaccination_centre :
-                intent = new Intent(this,VaccinationSearchActivity.class);
+            case R.id.nav_vaccination_centre:
+                intent = new Intent(this, VaccinationSearchActivity.class);
                 break;
         }
 
@@ -231,32 +236,33 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-
+    /**
+     * This is to fetch the cases statistics data which is displayed on the dashboard.
+     */
     private void fetchTotalsData() {
 
         String url = "https://corona.lmao.ninja/v2/all/";
-        StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                try {
+        StringRequest request = new StringRequest(Request.Method.GET, url, response -> {
 
-                    JSONObject jsonObject = new JSONObject(response);
+            try {
 
-                    String total_json = jsonObject.getString("cases");
-                    long totals = Long.parseLong(total_json);
-                    total.setText(NumberFormat.getNumberInstance(Locale.US).format(totals));
+                JSONObject jsonObject = new JSONObject(response);
 
-                    String death_json = jsonObject.getString("deaths");
-                    long death = Long.parseLong(death_json);
-                    deaths.setText(NumberFormat.getNumberInstance(Locale.US).format(death));
+                String total_json = jsonObject.getString("cases");
+                long totals = Long.parseLong(total_json);
+                total.setText(NumberFormat.getNumberInstance(Locale.US).format(totals));
 
-                    String active_json = jsonObject.getString("active");
-                    long actives = Long.parseLong(active_json);
-                    active.setText(NumberFormat.getNumberInstance(Locale.US).format(actives));
+                String death_json = jsonObject.getString("deaths");
+                long death = Long.parseLong(death_json);
+                deaths.setText(NumberFormat.getNumberInstance(Locale.US).format(death));
 
-                    String recovered_json = jsonObject.getString("recovered");
-                    long recoveries = Long.parseLong(recovered_json);
-                    recovered.setText(NumberFormat.getNumberInstance(Locale.US).format(recoveries));
+                String active_json = jsonObject.getString("active");
+                long actives = Long.parseLong(active_json);
+                active.setText(NumberFormat.getNumberInstance(Locale.US).format(actives));
+
+                String recovered_json = jsonObject.getString("recovered");
+                long recoveries = Long.parseLong(recovered_json);
+                recovered.setText(NumberFormat.getNumberInstance(Locale.US).format(recoveries));
 
 //                    total.setText(jsonObject.getString("cases"));
 //                    deaths.setText(jsonObject.getString("deaths"));
@@ -264,22 +270,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //                    recovered.setText(jsonObject.getString("recovered"));
 
 
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
+        }, error -> Toast.makeText(MainActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show());
 
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(MainActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
         MySingleton.getInstance(this).addToRequestQueue(request);
     }
 
 
-
+    /**
+     * To check the Network Availability on device
+     *
+     * @return true or false based on network connectivity
+     */
     private boolean isNetworkAvailable() {
         ConnectivityManager connectivityManager
                 = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);

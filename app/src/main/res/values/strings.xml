@@ -23,6 +23,7 @@
     <string name="news_updates">News Updates</string>
     <string name="turn_on_internet">Please Turn On Internet Connection !</string>
     <string name="pull_refresh"> and Pull down to Refresh !</string>
+    <string name="book_now">Book Now</string>
 
 
 </resources>

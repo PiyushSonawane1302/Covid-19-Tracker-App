@@ -1,12 +1,15 @@
 package com.example.covid19tracker;
 
+/**
+ * Model Class for the News
+ */
 public class News {
     String source;
     String title;
     String url;
     String imageUrl;
 
-    public News(String title, String url, String imageUrl,String source) {
+    public News(String title, String url, String imageUrl, String source) {
         this.title = title;
         this.url = url;
         this.imageUrl = imageUrl;

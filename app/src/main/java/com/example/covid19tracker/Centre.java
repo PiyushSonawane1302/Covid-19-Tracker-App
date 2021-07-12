@@ -1,5 +1,9 @@
 package com.example.covid19tracker;
 
+/**
+ * Model Class for the centre
+ */
+
 public class Centre {
 
     String centerName;

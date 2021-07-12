@@ -104,103 +104,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="16dp"
-                            android:elevation="4dp"
-                            app:cardCornerRadius="30dp">
-
-
-                            <FrameLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="150dp">
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:scaleType="centerCrop"
-                                    android:src="@drawable/ic_vaccination_bg" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_margin="16dp"
-                                    android:fontFamily="@font/quicksand_bold"
-                                    android:text="Get Vaccinated"
-                                    android:textColor="@color/white"
-                                    android:textSize="22sp" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="16dp"
-                                    android:layout_marginTop="48dp"
-                                    android:textColor="@color/white"
-                                    android:textSize="14sp"
-                                    android:fontFamily="@font/quicksand_bold"
-                                    android:text="Search for vaccination\ncentre"/>
-
-                                <Button
-                                    android:id="@+id/search_vaccine_btn"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="40dp"
-                                    android:layout_gravity="bottom|start"
-                                    android:layout_margin="16dp"
-                                    android:background="@drawable/button_background"
-                                    android:backgroundTint="@color/white"
-                                    android:fontFamily="@font/quicksand_bold"
-                                    android:text="@string/search"
-                                    android:textAllCaps="false" />
-
-                            </FrameLayout>
-
-                        </androidx.cardview.widget.CardView>
-
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="16dp"
-                            android:elevation="4dp"
-                            app:cardCornerRadius="30dp">
-
-
-                            <FrameLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="150dp">
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:scaleType="centerCrop"
-                                    android:src="@drawable/ic_first_card_background" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_margin="16dp"
-                                    android:fontFamily="@font/quicksand_bold"
-                                    android:text="@string/precaution"
-                                    android:textColor="@color/white"
-                                    android:textSize="22sp" />
-
-                                <Button
-                                    android:id="@+id/precautions_btn"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="40dp"
-                                    android:layout_gravity="bottom|start"
-                                    android:layout_margin="16dp"
-                                    android:background="@drawable/button_background"
-                                    android:backgroundTint="@color/white"
-                                    android:fontFamily="@font/quicksand_bold"
-                                    android:text="@string/explore"
-                                    android:textAllCaps="false" />
-
-                            </FrameLayout>
-
-                        </androidx.cardview.widget.CardView>
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="16dp"
                             android:elevation="16dp"
                             app:cardCornerRadius="20dp">
 
@@ -220,7 +123,7 @@
                                     android:drawablePadding="8dp"
                                     android:fontFamily="@font/quicksand_bold"
                                     android:text="@string/global_stats"
-                                    android:textColor="#6D6D6D"
+                                    android:textColor="#434343"
                                     android:textSize="26sp"
                                     app:drawableEndCompat="@drawable/ic_graph" />
 
@@ -399,6 +302,102 @@
 
                         </androidx.cardview.widget.CardView>
 
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="16dp"
+                            android:elevation="4dp"
+                            app:cardCornerRadius="30dp">
+
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="150dp">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/ic_vaccination_bg" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="16dp"
+                                    android:fontFamily="@font/quicksand_bold"
+                                    android:text="Get Vaccinated"
+                                    android:textColor="@color/white"
+                                    android:textSize="22sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginTop="48dp"
+                                    android:textColor="@color/white"
+                                    android:textSize="14sp"
+                                    android:fontFamily="@font/quicksand_bold"
+                                    android:text="Search for vaccination\ncentre"/>
+
+                                <Button
+                                    android:id="@+id/search_vaccine_btn"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="40dp"
+                                    android:layout_gravity="bottom|start"
+                                    android:layout_margin="16dp"
+                                    android:background="@drawable/button_background"
+                                    android:backgroundTint="@color/white"
+                                    android:fontFamily="@font/quicksand_bold"
+                                    android:text="@string/search"
+                                    android:textAllCaps="false" />
+
+                            </FrameLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="16dp"
+                            android:elevation="4dp"
+                            app:cardCornerRadius="30dp">
+
+
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="150dp">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/ic_first_card_background" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="16dp"
+                                    android:fontFamily="@font/quicksand_bold"
+                                    android:text="@string/precaution"
+                                    android:textColor="@color/white"
+                                    android:textSize="22sp" />
+
+                                <Button
+                                    android:id="@+id/precautions_btn"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="40dp"
+                                    android:layout_gravity="bottom|start"
+                                    android:layout_margin="16dp"
+                                    android:background="@drawable/button_background"
+                                    android:backgroundTint="@color/white"
+                                    android:fontFamily="@font/quicksand_bold"
+                                    android:text="@string/explore"
+                                    android:textAllCaps="false" />
+
+                            </FrameLayout>
+
+
+                        </androidx.cardview.widget.CardView>
 
                         <androidx.cardview.widget.CardView
                             android:layout_width="match_parent"

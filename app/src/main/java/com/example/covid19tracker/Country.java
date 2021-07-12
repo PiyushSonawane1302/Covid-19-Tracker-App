@@ -1,5 +1,8 @@
 package com.example.covid19tracker;
 
+/**
+ * Model Class for the Country data
+ */
 public class Country {
     String flagUrl;
     String country;
