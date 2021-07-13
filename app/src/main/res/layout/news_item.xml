@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="16dp">
 
@@ -12,10 +11,10 @@
         android:id="@+id/news_source"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_26sdp"
+        android:layout_marginTop="@dimen/_14sdp"
         android:fontFamily="@font/quicksand_bold"
-        tools:text="Source Name"
-        android:textColor="#00b0ff" />
+        android:textColor="#00b0ff"
+        tools:text="Source Name" />
 
     <TextView
         android:id="@+id/news_title"
@@ -28,26 +27,20 @@
         android:fontFamily="@font/quicksand_bold"
         android:maxLines="3"
         android:paddingEnd="@dimen/_8sdp"
-        android:textColor="@color/black"
+        android:textColor="#3A3A3A"
         tools:ignore="RtlSymmetry"
         tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum... " />
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/news_img"
+        android:layout_width="@dimen/_90sdp"
+        android:layout_height="@dimen/_90sdp"
         android:layout_gravity="end"
-        app:cardCornerRadius="10dp">
-
-        <ImageView
-            android:id="@+id/news_img"
-            android:layout_width="@dimen/_100sdp"
-            android:layout_height="@dimen/_100sdp"
-            android:scaleType="centerCrop" />
-
-    </androidx.cardview.widget.CardView>
+        tools:src="@drawable/nav_header"
+        android:scaleType="centerCrop"
+        app:riv_corner_radius="20dp" />
 
 </FrameLayout>
-
-
 
 
