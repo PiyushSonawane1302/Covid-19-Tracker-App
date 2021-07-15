@@ -1,11 +1,11 @@
 # Covid-19-Tracker-App
 
-This is a Covid-19 Tracker App in whichyou can See the Global Stats of covid cases and Search for the country wise cases data
-Find the Vaccination Centres Near You and Book your Slot Through Cowin Website.
-See all the Health Related Latest News Updates.
-Search for the Covid Test Centres Near you with the help of Google Maps.
+This is a Covid-19 Tracker App in whichyou can See the Global Stats of covid cases and Search for the country wise cases data.<br>
+Find the Vaccination Centres Near You and Book your Slot Through Cowin Website.<br>
+See all the Health Related Latest News Updates.<br>
+Search for the Covid Test Centres Near you with the help of Google Maps.<br>
 
-<br>
+
 <br>
 
 <P>
